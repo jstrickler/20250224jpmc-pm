@@ -1,7 +1,6 @@
 import pytest
 import math
 
-FILE_NAME = 'IDONOTEXIST.txt'
 
 # subject under test ####################################
 def read_file_data(file_name):
@@ -10,6 +9,7 @@ def read_file_data(file_name):
         return data
 #########################################################
 
+FILE_NAME = 'IDONOTEXIST.txt'
 
 def test_missing_filename():
     """

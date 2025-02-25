@@ -17,6 +17,7 @@ def test_capsys(capsys):
     hello()  # Call function that writes text to STDOUT
     out, err = capsys.readouterr()  # Get captured output
     print("STDOUT:", out)
+    assert out == "Hello, pytesting world\n"
 
 def bhello():
     print(b"Hello, binary pytesting world\n")
