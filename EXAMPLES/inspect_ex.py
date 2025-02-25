@@ -15,9 +15,12 @@ things = (
 
 print("Name               Module?  Function?  Class?  Method?")
 for thing in things:
-    try:
+    # try:
+    #     thing_name = thing.__name__
+    # except AttributeError:
+    if hasattr(thing, '__name__'):
         thing_name = thing.__name__
-    except AttributeError:
+    else:
         thing_name = type(thing).__name__ + " instance"
     print("{:18s} {!s:6s}   {!s:6s}     {!s:6s}  {!s:6s}".format(
         thing_name,
@@ -29,6 +32,7 @@ for thing in things:
 
 
 print()
+# pos-only, pos, optional, named, optional_named
 def spam(p1, p2='a', *p3, p4, p5='b', **p6):  # define a function
     print(p1, p2, p3, p4, p5, p6)
 

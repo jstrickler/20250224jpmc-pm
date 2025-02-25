@@ -20,3 +20,8 @@ print()
 g = globals()
 g['color'] = "blue"  # create a new variable
 print("color:", color)
+print(f"{type(color) = }")
+
+g['bark'] = lambda : print("Woof! Woof!")
+
+bark()

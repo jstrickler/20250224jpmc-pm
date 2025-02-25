@@ -1,5 +1,6 @@
 import pytest
 import spamlib
+from spamlib import spam
 from spamlib.spam import Spam
 
 @pytest.fixture
@@ -16,3 +17,4 @@ def test_spam_calls_ham(mocker, ham_value, ham_result):
     s = Spam(ham_value)  # Create instance of Spam, which calls ham()
     assert s.value == ham_result
     assert spamlib.spam.ham.calledoncewith(ham_value)
+    assert spamlib.spam.ham.calledonce()

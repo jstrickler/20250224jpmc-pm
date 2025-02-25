@@ -19,6 +19,13 @@ class SpamSearch():  # System under test
         self.target_string = target_string
 
     def findit(self):  # Specific method to test (uses re.search)
-        return re.search(self.search_string, self.target_string)
+        return re.search(self.target_string, self.search_string)
 
 
+if __name__ == "__main__":
+    s = Spam(42)
+    print(f"{s.value = }")
+    
+    srch = SpamSearch("lightning bug", "bug")
+    print(f"{srch.findit() = }")
+    
