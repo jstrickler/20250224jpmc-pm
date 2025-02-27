@@ -18,7 +18,9 @@ MOVIE_TITLES = [
 
 def main():
     with requests.Session() as session:
+        # session.arg.???
         session.params.update({"apikey": OMDB_API_KEY})
+        session.timeout = (10,)
         for movie_title in MOVIE_TITLES:
             params = {'t': movie_title}
             response = session.get(OMDB_URL, params=params)

@@ -7,6 +7,7 @@ URL = 'http://httpbin.org/post'
 for i in range(3):
     response = requests.post(  # POST data to server
         URL,
+#        json="json string here ..."
         data={'date': datetime.now(),
             'label': 'test_' + str(i)
         },

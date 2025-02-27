@@ -18,3 +18,7 @@ class MemoryChecker():
 if __name__ == '__main__':
     mc = MemoryChecker()
     print(mc())  # can call at any time to get current memory use
+    x = [0] * 100000000
+    print(mc())
+    del x
+    print(mc())
