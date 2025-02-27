@@ -23,6 +23,12 @@ def president_by_term(termnum):
     else:
         html_content = '<h2>Sorry,  {} is not a valid term number</h2>'.format(term)
         return html_content
+@app.route('/presidents')
+def presidents():
+
+    presidents_list = [President(term) for term in range(1,48)]
+    return render_template('president_results.html', presidents=presidents_list)
+
 
 @app.route('/president/<last_name>/')
 def president_by_last_name(last_name):

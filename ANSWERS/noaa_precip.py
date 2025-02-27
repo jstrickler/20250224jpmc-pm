@@ -9,7 +9,7 @@ session.headers.update(
     {
         'token': TOKEN, 
         'UserAgent': "cja-tech.com,jstrickler@gmail.com", 
-        'Accept': "application/GeoJSON"
+        'Accept': "*/*"
     }
 )
 

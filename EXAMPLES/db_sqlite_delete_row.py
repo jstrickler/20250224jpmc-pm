@@ -6,13 +6,13 @@ with sqlite3.connect("../DATA/presidents.db") as conn:  # connect to DB
 
     sql_delete = """
     delete from presidents
-    where TERMNUM = 47 
+    where TERMNUM = :term_num
     """
 
     cursor = conn.cursor()  # get a cursor
 
     try:
-        cursor.execute(sql_delete)
+        cursor.execute(sql_delete, {'term_num': 48 })
     except (sqlite3.DatabaseError, sqlite3.OperationalError, sqlite3.DataError) as err:
         print(err)
         conn.rollback()

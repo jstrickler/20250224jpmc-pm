@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Cupcakes 'R' Us Home{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div>Welcome to Cupcakes 'R' Us</div>
+<div><a href="{{ url_for('cupcakes.other') }}">Other Page</a></div>
+{% endblock %}

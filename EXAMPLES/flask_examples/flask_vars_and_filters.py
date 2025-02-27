@@ -10,6 +10,10 @@ FRUITS = ["apple", "banana", "mango", "fig"]
 def index():
     return '<h1>try /username/YOURNAME</h1>'
 
+class Dog:
+    def bark(self):
+        return "woof! woof!"
+
 @app.route('/username/<username>')
 def user_name(username):
     user_agent = request.headers.get('User-Agent')
@@ -17,6 +21,7 @@ def user_name(username):
         'vars_and_filters.html',
         president=President(26),
         browser=user_agent,
+        dog=Dog(),
         username=username.replace('+',' '),
         fruits=FRUITS,
     )
